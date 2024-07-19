@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
-{{-- <body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+<body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
 x-init="
      darkMode = JSON.parse(localStorage.getItem('darkMode'));
      $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
@@ -15,13 +15,13 @@ x-init="
 
 
 
-    @include('layouts.partials.main')
+    {{-- @include('layouts.partials.main')
 
     @include('layouts.partials.footer')
-    @include('layouts.partials.scrolltop')
+    @include('layouts.partials.scrolltop') --}}
 
-</body>--}}
-<body class="bg-gray-100">
+
+{{-- <body class="bg-gray-100"> --}}
     {{-- <header class="p-5 border-b bg-white shadow">
         <div class="container mx-auto flex justify-between item-center">
             <h1 class="text-3xl font-black">Digital Contents</h1>

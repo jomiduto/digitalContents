@@ -1,10 +1,24 @@
-@extends('layouts.app')
 
-@section('titulo')
-    Inicia Sesión en Digital Contents
-@endsection
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Contents - Iniciar Sesión</title>
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
+  </head>
+  <body
+    x-data="{ page: 'signin', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark bg-black': darkMode === true}"
+  >
+    <!-- Include header -->
+    @include('layouts.partials.header')
 
-@section('contenido')
     <main>
         <!-- ===== SignIn Form Start ===== -->
         <section class="relative overflow-hidden bg-whiter dark:bg-blacksection px-4 md:px-8 xl:px-0 pt-35 lg:pt-45 xl:pt-50 pb-20 lg:pb-25 xl:pb-30">
@@ -55,16 +69,21 @@
             </div>
 
             <button class="w-full text-center font-medium block rounded-full bg-primary text-white ease-in-out duration-300 hover:shadow-1 py-3 px-7.5">
-                Sign In
+                Iniciar Sesión
             </button>
 
             <p class="font-outfit font-light text-lg text-center mt-7.5">
-                Don't have an account?
-                <a class="text-primary" href="signup.html"> Sign Up </a>
+                ¿No tienes cuenta?
+                <a class="text-primary" href="{{route('register')}}"> Crea tu Cuenta </a>
             </p>
             </form>
         </div>
         </section>
         <!-- ===== SignIn Form End ===== -->
-  </main>
-@endsection
+    </main>
+    {{-- Include footer --}}
+    @include('layouts.partials.footer')
+    {{-- Include scrolltop --}}
+    @include('layouts.partials.scrolltop')
+  </body>
+</html>
