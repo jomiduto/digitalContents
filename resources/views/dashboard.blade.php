@@ -16,6 +16,9 @@ x-init="
     @include('layouts.partials.header')
 
     <main>
+        <section>
+            <h1 class="text-gray-700 text-2xl">Bienvenido {{ $user->username }}</h1>
+        </section>
         <!-- ===== Blog Grid Start ===== -->
         <section class="py-20 lg:py-25 xl:py-30">
           <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
