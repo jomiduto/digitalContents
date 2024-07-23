@@ -52,7 +52,7 @@
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Jose Dueñas"
+                  placeholder="Jhon Doe"
                   class="w-full bg-white rounded-full shadow-4 border border-strokedark focus-visible:outline-none focus:border-primary focus:shadow-4 placeholder:text-body/50 py-3.5 px-6 dark:bg-black dark:shadow-none dark:border-stroke dark:focus:border-primary/40"
                 />
                 @error('name')
@@ -67,7 +67,7 @@
                   type="text"
                   name="username"
                   id="username"
-                  placeholder="jomiduto"
+                  placeholder="jhondoe"
                   class="w-full bg-white rounded-full shadow-4 border border-strokedark focus-visible:outline-none focus:border-primary focus:shadow-4 placeholder:text-body/50 py-3.5 px-6 dark:bg-black dark:shadow-none dark:border-stroke dark:focus:border-primary/40"
                 />
                 @error('username')
@@ -81,7 +81,7 @@
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="example@gmail.com"
+                  placeholder="ejemplo@ejemplo.com"
                   class="w-full bg-white rounded-full shadow-4 border border-strokedark focus-visible:outline-none focus:border-primary focus:shadow-4 placeholder:text-body/50 py-3.5 px-6 dark:bg-black dark:shadow-none dark:border-stroke dark:focus:border-primary/40"
                 />
                 @error('email')
