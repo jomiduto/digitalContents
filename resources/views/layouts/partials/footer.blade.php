@@ -1,7 +1,7 @@
 <footer>
     <div class="mx-auto max-w-1390 px-4 md:px-8 2xl:px-0">
       <!-- Footer Top -->
-      <div class="py-20 lg:py-25">
+      {{-- <div class="py-20 lg:py-25">
         <div class="flex flex-wrap lg:justify-between gap-8 lg:gap-0">
           <div class="animate_top w-1/2 lg:w-1/4">
             <a href="index.html">
@@ -150,21 +150,20 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       <!-- Footer Top -->
 
       <!-- Footer Bottom -->
       <div class="border-t border-strokedark dark:border-stroke flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between gap-5 lg:gap-0 py-7.5">
         <div class="animate_top">
           <ul class="flex items-center gap-8">
-            <li><a href="#" class="hover:text-primary">English</a></li>
-            <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-primary">Support</a></li>
+            <li><a href="#" class="hover:text-primary">Política de Privacidad</a></li>
+            <li><a href="#" class="hover:text-primary">Soporte</a></li>
           </ul>
         </div>
 
         <div class="animate_top">
-          <p>&copy; 2025 Base. All rights reserved</p>
+            <p>&copy Digital Contents - Todos los derechos reservados {{ now()->year }}</p>
         </div>
       </div>
       <!-- Footer Bottom -->

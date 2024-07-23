@@ -7,11 +7,13 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
-<body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
-x-init="
-     darkMode = JSON.parse(localStorage.getItem('darkMode'));
-     $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-:class="{'dark bg-black': darkMode === true}">
+<body
+    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark bg-black': darkMode === true}"
+  >
 
     @include('layouts.partials.header')
 
