@@ -77,9 +77,21 @@
             <img class="hidden dark:block" src="./images/icon/icon-moon.svg" alt="Moon" />
           </label>
         </div>
+        @guest
+            <a href="{{route('login')}}" :class="{ '!text-white hover:text-white' : page === 'home', '!text-body' : page === 'home' && stickyMenu }" class="font-medium text-body hover:text-primary">Iniciar Sesión</a>
+            <a href="{{route('register')}}" :class="{ 'bg-white/[0.15]' : page === 'home', '!bg-primary' : page === 'home' && stickyMenu }" class="text-white bg-primary text-regular rounded-full flex items-center justify-center hover:shadow-1 py-3 px-7.5">Regístrate</a>
+        @endguest
 
-        <a href="{{route('login')}}" :class="{ '!text-white hover:text-white' : page === 'home', '!text-body' : page === 'home' && stickyMenu }" class="font-medium text-body hover:text-primary">Sign In</a>
-        <a href="{{route('register')}}" :class="{ 'bg-white/[0.15]' : page === 'home', '!bg-primary' : page === 'home' && stickyMenu }" class="text-white bg-primary text-regular rounded-full flex items-center justify-center hover:shadow-1 py-3 px-7.5">Sign Up</a>
+        @auth
+            <a href="{{route('login')}}" :class="{ '!text-white hover:text-white' : page === 'home', '!text-body' : page === 'home' && stickyMenu }" class="font-medium text-body hover:text-primary">Recursos</a>
+            <a href="#" :class="{ '!text-white hover:text-white' : page === 'home', '!text-body' : page === 'home' && stickyMenu }" class="font-medium text-body hover:text-primary">Perfil</a>
+            <form method="POST" action="{{route('logout')}}">
+                @csrf
+                <button type="submit" :class="{ 'bg-white/[0.15]' : page === 'home', '!bg-primary' : page === 'home' && stickyMenu }" class="text-white bg-primary text-regular rounded-full flex items-center justify-center hover:shadow-1 py-3 px-7.5">
+                    Cerrar Sesión
+                </button>
+            </form>
+        @endauth
       </div>
     </div>
   </div>
