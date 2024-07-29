@@ -19,10 +19,22 @@ x-init="
         <!-- ===== Blog Grid Start ===== -->
         <section class="py-20 lg:py-25 xl:py-30">
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
-                <h4 class="font-medium text-xl text-primary mb-5">¡Hola {{ $user->name }}!</h4>
+                <h4 class="font-medium text-xl text-primary mb-5">¡Hola, {{ $user->name }}!</h4>
                 <h2 class="font-semibold text-3xl lg:text-4xl xl:text-title-xl text-black dark:text-white mb-7.5">
                     Tenemos estos recursos para ti...
                 </h2>
+            </div>
+            <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
+                <h1>Este contenido es público</h1>
+                @role('admin')
+                    <h1>Este contenido es para el administrador</h1>
+                @endrole
+                @role('teacher')
+                    <h1>Este contenido es para el docente</h1>
+                @endrole
+                @role('student')
+                    <h1>Este contenido es para el estudiante</h1>
+                @endrole
             </div>
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">
@@ -35,8 +47,7 @@ x-init="
                         class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
                     >
                         <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
+                        >Leer Más</a>
                     </div>
                     </div>
 
