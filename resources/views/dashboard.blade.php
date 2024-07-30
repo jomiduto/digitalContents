@@ -30,7 +30,7 @@ x-init="
                     <h1>Este contenido es para el administrador</h1>
                 @endrole
                 @role('teacher')
-                    <h1>Este contenido es para el docente</h1>
+                    @include('dashboard.dashboard_teacher')
                 @endrole
                 @role('student')
                     <h1>Este contenido es para el estudiante</h1>
