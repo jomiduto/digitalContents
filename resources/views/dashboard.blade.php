@@ -26,15 +26,9 @@ x-init="
             </div>
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
                 <h1>Este contenido es público</h1>
-                @role('admin')
-                    <h1>Este contenido es para el administrador</h1>
-                @endrole
-                @role('teacher')
-                    @include('dashboard.dashboard_teacher')
-                @endrole
-                @role('student')
-                    <h1>Este contenido es para el estudiante</h1>
-                @endrole
+                <h1>Este contenido es para el Administrador</h1>
+                <h1>Este contenido es para el Docente</h1>
+                <h1>Este contenido es para el Estudiante</h1>
             </div>
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">
