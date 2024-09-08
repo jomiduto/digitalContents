@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
@@ -20,7 +21,9 @@ class PostsController extends Controller implements HasMiddleware
      */
     public function index()
     {
-        return view('dashboard.create_contents');
+        $posts = Posts::paginate();
+
+        return view('dashboard.create_contents', compact('posts'));
     }
 
     /**
