@@ -13,7 +13,7 @@ x-init="
      $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
 :class="{'dark bg-black': darkMode === true}">
 
-    @include('layouts.partials.header')
+    @include('layouts.partials.header-dashboard')
 
     <main>
         <!-- ===== Blog Grid Start ===== -->

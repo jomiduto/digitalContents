@@ -1,18 +1,19 @@
 <?php
 
-use App\Models\User;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Schema;
-use Spatie\Permission\Models\Permission;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+namespace Database\Seeders;
 
-return new class extends Migration
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Spatie\Permission\Models\Permission;
+
+class PostSeeder extends Seeder
 {
     /**
-     * Run the migrations.
+     * Run the database seeds.
      */
-    public function up(): void
+    public function run(): void
     {
         // $roleAdmin = Role::create(['name' => 'admin']);
         // $roleStudent = Role::create(['name' => 'student']);
@@ -26,13 +27,16 @@ return new class extends Migration
         // $userTeacher->assignRole($roleTeacher);
         // $userStudent->assignRole($roleStudent);
 
-    }
+        // Permission::create(['name' => 'teacher.post.index']);
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
+        $roleAdmin = Role::find(1);
+        $roleStudent = Role::find(2);
+        $roleTeacher = Role::find(3);
 
+        // Permission::find(1)->assignRole($roleAdmin);
+        // Permission::find(1)->assignRole($roleTeacher);
+
+        // Remover Permisos sobre los Roles
+        Permission::find(1)->removeRole($roleAdmin);
     }
-};
+}

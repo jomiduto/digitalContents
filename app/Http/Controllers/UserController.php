@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 
-class PostController extends Controller implements HasMiddleware
+class UserController extends Controller implements HasMiddleware
 {
     public static function middleware(): array
     {
@@ -16,10 +15,8 @@ class PostController extends Controller implements HasMiddleware
         ];
     }
 
-    public function index(User $user)
+    public function index()
     {
-        return view('dashboard.create_contents', [
-            'user' => $user
-        ]);
+        return view('dashboard.users');
     }
 }
