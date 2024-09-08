@@ -35,8 +35,8 @@
         <nav>
             <ul class="flex lg:items-center flex-col lg:flex-row gap-5 lg:gap-10">
                 <li><a href="#" class="hover:text-primary" :class="{ 'text-primary': page === 'home' }">Dashboard</a></li>
-                <li><a href="{{route('post.index')}}" class="hover:text-primary">Contenidos</a></li>
-                <li><a href="{{route('users')}}" class="hover:text-primary">Estudiantes</a></li>
+                <li><a href="{{ route('posts.index') }}" class="hover:text-primary">Contenidos</a></li>
+                <li><a href="" class="hover:text-primary">Estudiantes</a></li>
                 <li><a href="#" class="hover:text-primary">Perfil</a></li>
             </ul>
         </nav>
