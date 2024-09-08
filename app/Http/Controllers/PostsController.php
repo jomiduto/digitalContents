@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class PostsController extends Controller
+class PostsController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return[
+            'auth',
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
