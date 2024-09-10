@@ -21,17 +21,39 @@ class PostsController extends Controller implements HasMiddleware
      */
     public function index()
     {
-        $posts = Posts::paginate();
+        // $posts = Posts::paginate();
+        $posts = Posts::orderBy('id', 'DESC')->get();
 
         return view('dashboard.create_contents', compact('posts'));
     }
 
+    public function create()
+    {
+        return view('dashboard.create_posts');
+    }
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+
+        //Validación de campos
+        $validated = $request->validate([
+            'title' => 'required|min:4|max:255',
+            'author' => 'required|min:4|max:100',
+            'url' => 'required|min:10|max:100',
+            'content' => 'required|min:10'
+        ]);
+
+        Posts::create([
+            'title' => $request->title,
+            'author' => $request->author,
+            'url' => $request->url,
+            'content' => $request->content
+        ]);
+
+        return redirect()->route('posts.index');
     }
 
     /**

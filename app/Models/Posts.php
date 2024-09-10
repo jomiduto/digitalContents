@@ -32,7 +32,7 @@ class Posts extends Model
         'title',
         'content',
         'author',
+        'url',
         'image',
-        'date_publication',
     ];
 }

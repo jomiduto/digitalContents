@@ -21,8 +21,7 @@ class PostsFactory extends Factory
             'content' => fake()->text($maxNbChars = 200),
             'author' => fake()->name(),
             'url' => fake()->domainName(),
-            'image' => fake()->imageUrl(),
-            'date_publication' => now()
+            'image' => fake()->imageUrl()
         ];
     }
 }

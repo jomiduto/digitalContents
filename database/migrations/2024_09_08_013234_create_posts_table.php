@@ -17,8 +17,7 @@ return new class extends Migration
             $table->longText('content');
             $table->string('author');
             $table->string('url');
-            $table->string('image');
-            $table->date('date_publication');
+            $table->string('image')->nullable();
         });
     }
 

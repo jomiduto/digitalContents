@@ -28,4 +28,6 @@ Route::get('/{user:username}', [DashboardController::class, 'index'])->name('das
 // Route Post Controller
 Route::controller(PostsController::class)->group(function () {
     Route::get('posts/index', [PostsController::class, 'index'])->name('posts.index');
+    Route::get('posts/create', [PostsController::class, 'create'])->name('posts.create');
+    Route::post('posts/store', [PostsController::class, 'store'])->name('posts.store');
 });
