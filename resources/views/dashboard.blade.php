@@ -26,196 +26,40 @@ x-init="
             </div>
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
                 <h1>Este contenido es público</h1>
-                <h1>Este contenido es para el Administrador</h1>
-                <h1>Este contenido es para el Docente</h1>
-                <h1>Este contenido es para el Estudiante</h1>
             </div>
             <div class="mx-auto max-w-1280 px-4 md:px-8 xl:px-0 mt-12.5 lg:mt-17.5">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-01.png" alt="Blog" />
+                    <!-- Blog Item -->
+                    @foreach ($posts as $post)
+                        <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
+                            <div class="group block relative z-1 overflow-hidden">
+                            <img class="w-full" src="{{ $post->image }}" alt="{{ $post->title }}" />
 
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Leer Más</a>
-                    </div>
-                    </div>
+                            <div
+                                class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
+                            >
+                                <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
+                                >Leer Más</a>
+                            </div>
+                            </div>
 
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
+                            <div class="p-7.5">
+                            <div class="flex flex-wrap items-center gap-2 xl:gap-5">
+                                <div class="flex items-center gap-2">
+                                <img src="./images/icon/icon-man.svg" alt="User" />
+                                <p>{{ $post->author }}</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                <img src="./images/icon/icon-calender.svg" alt="Calender" />
+                                <p>{{ $post->created_at->format('d M, Y') }}</p>
+                                </div>
+                            </div>
+                            <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
+                                <a href="blog-single.html">{{$post->title}}</a>
+                            </h4>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">Free advertising for your online business</a>
-                    </h4>
-                    </div>
-                </div>
-
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-02.png" alt="Blog" />
-
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
-                    </div>
-                    </div>
-
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">9 simple ways to improve your design skills</a>
-                    </h4>
-                    </div>
-                </div>
-
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-03.png" alt="Blog" />
-
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
-                    </div>
-                    </div>
-
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">Tips to quickly improve your coding speed.</a>
-                    </h4>
-                    </div>
-                </div>
-
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-01.png" alt="Blog" />
-
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
-                    </div>
-                    </div>
-
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">Free advertising for your online business</a>
-                    </h4>
-                    </div>
-                </div>
-
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-02.png" alt="Blog" />
-
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
-                    </div>
-                    </div>
-
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">9 simple ways to improve your design skills</a>
-                    </h4>
-                    </div>
-                </div>
-
-                <!-- Blog Item -->
-                <div class="animate_top rounded-lg shadow-3 dark:bg-blacksection dark:shadow-none">
-                    <div class="group block relative z-1 overflow-hidden">
-                    <img class="w-full" src="./images/blog/blog-03.png" alt="Blog" />
-
-                    <div
-                        class="group-hover:translate-y-0 absolute top-0 left-0 translate-y-full w-full h-full rounded-t-lg flex items-center justify-center backdrop-blur bg-white/20 ease-linear duration-300 z-10"
-                    >
-                        <a href="./blog-single.html" class="inline-flex font-medium rounded-full text-white bg-primary hover:bg-secondary ease-in-out duration-300 py-3 px-7.5"
-                        >Read More</a
-                        >
-                    </div>
-                    </div>
-
-                    <div class="p-7.5">
-                    <div class="flex flex-wrap items-center gap-2 xl:gap-5">
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-man.svg" alt="User" />
-                        <p>Musharof Chy</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                        <img src="./images/icon/icon-calender.svg" alt="Calender" />
-                        <p>25 Dec, 2025</p>
-                        </div>
-                    </div>
-                    <h4 class="font-medium text-2xl ease-in-out duration-300 text-black dark:text-white hover:text-primary xl:w-[90%] mt-3">
-                        <a href="blog-single.html">Tips to quickly improve your coding speed.</a>
-                    </h4>
-                    </div>
-                </div>
+                    @endforeach
                 </div>
 
                 <!-- Pagination -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Posts;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\Controllers\HasMiddleware;
@@ -18,8 +19,10 @@ class DashboardController extends Controller implements HasMiddleware
 
     public function index(User $user)
     {
+        $posts = Posts::orderBy('id', 'DESC')->get();
+
         return view('dashboard', [
-            'user' => $user
-        ]);
+            'user' => $user,
+        ], compact('posts'));
     }
 }
