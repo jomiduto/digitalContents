@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('principal');
@@ -21,7 +22,12 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 // Route logout controller
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-// Route Post controller
-Route::get('/posts', [PostController::class, 'index'])->name('posts');
+// Route Dashboard Controller
+Route::get('/{user:username}', [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
+// Route Post Controller
+Route::controller(PostsController::class)->group(function () {
+    Route::get('posts/index', [PostsController::class, 'index'])->name('posts.index');
+    Route::get('posts/create', [PostsController::class, 'create'])->name('posts.create');
+    Route::post('posts/store', [PostsController::class, 'store'])->name('posts.store');
+});
